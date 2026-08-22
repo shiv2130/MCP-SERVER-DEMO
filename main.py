@@ -3,6 +3,11 @@ import os
 import sqlite3
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "expenses.db")
+print("DB PATH:", DB_PATH)
+print("DB EXISTS:", os.path.exists(DB_PATH))
+print("DB WRITABLE:", os.access(DB_PATH, os.W_OK))
+print("DIRECTORY:", os.path.dirname(DB_PATH))
+print("DIRECTORY WRITABLE:", os.access(os.path.dirname(DB_PATH), os.W_OK))
 CATEGORIES_PATH = os.path.join(os.path.dirname(__file__), "categories.json")
 
 mcp = FastMCP("ExpenseTracker")
