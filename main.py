@@ -1,8 +1,10 @@
 from fastmcp import FastMCP
 import os
 import sqlite3
+import tempfile
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "expenses.db")
+TEMP_DIR = tempfile.gettempdir()
+DB_PATH = os.path.join(TEMP_DIR, "expenses.db")
 print("DB PATH:", DB_PATH)
 print("DB EXISTS:", os.path.exists(DB_PATH))
 print("DB WRITABLE:", os.access(DB_PATH, os.W_OK))
